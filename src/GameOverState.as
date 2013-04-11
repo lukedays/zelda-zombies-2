@@ -1,0 +1,24 @@
+package {
+	import org.flixel.*;
+	
+	public class GameOverState extends FlxState {
+		[Embed(source = "sprites/zombie.ttf", fontFamily = "zombie", embedAsCFF = "false")] public var ZombieFont:String;
+		[Embed(source = "sprites/zelda.ttf", fontFamily = "zelda", embedAsCFF = "false")] public var ZeldaFont:String;
+		
+		override public function create():void {
+			var text:FlxText = new FlxText(0, 50, 960, "GAME OVER");
+			text.setFormat("zombie", 80, 0xFFCC0E0E, "center", 0xFF705D5D);
+			add(text);
+			
+			text = new FlxText(0, 300, 960, "press any key to try again");
+			text.setFormat("zelda", 40, 0xFFFFFFFF, "center", 0xFF705D5D);
+			add(text);
+		}
+		
+		override public function update():void {
+			super.update();
+			
+			if (FlxG.keys.any()) FlxG.switchState(new PlayState());
+		}
+	}
+}
