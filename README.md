@@ -1,4 +1,4 @@
-zelda-zombies-2
+Zelda Zombies 2
 ===============
 
-Simple game made using Flixel
+Simple game made using [Flixel](http://flixel.org/).
